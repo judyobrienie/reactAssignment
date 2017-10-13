@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import CageApp from './App';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import Cages from './Data';
+
+ReactDOM.render(
+    <CageApp cages={Cages}/>,
+    document.getElementById('root')
+);
+
