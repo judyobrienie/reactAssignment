@@ -1,7 +1,10 @@
 // JavaScript source code
-import React, {Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Button extends Component {
+class Button extends React.Component {
+
+    //var PropTypes = requre('prop-types'); 
     static propTypes = {
         email: PropTypes.string.isRequired,
         formValues: PropTypes.shape({
@@ -16,14 +19,15 @@ class Button extends Component {
         this.state = {
             isClicked: false,
         };
-        this.logFormDataToConsole
+        this.logFormDataToConsole = this.logFormDataToConsole.bind(this);
     }
 
 
 
 
 logFormDataToConsole(event){
-    console.log(this.props.formValues);
+    console.log('Form Values', this.props.formValues);
+    this.setState({isClicked:true})    //disable button when clicked
 }
 
 render() {
@@ -31,15 +35,14 @@ render() {
         const subject= '?subject=Interested%20Client';
         const body = '&body=${this.props.formValues.message }';
         return (
-            <a
+            <button
                 href={'${recipient}${subject}&{body}'}
+                disabled={this.state.isClicked}    //disable button when clicked
                 onClick={this.logFormDataToConsole}
-
-            onClick={this.logFormDataToConsole}
                     >
 
                     Contact US
-        </a >
+        </button >
         
         );
     }

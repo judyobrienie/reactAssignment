@@ -1,5 +1,5 @@
 // JavaScript source code
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './header.jpg';
 import './App.css';
 import Field from './config/Field';
@@ -54,6 +54,8 @@ class Form extends React.Component {
 
 
                 {/* Name field*/}
+                <h1> Contact Form</h1>
+
                 <Field
                     label="Name"
                     onChange={(event) => this.updateField('name', event.target.value)}
@@ -72,7 +74,7 @@ class Form extends React.Component {
                
                 {/* Message textarea*/}
                 <Button
-                    email="judy@gmail.com"
+                    email="judyobrienie@gmail.com"
                     formValues={this.state}
                 />
             </div>
