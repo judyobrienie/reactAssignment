@@ -27,7 +27,7 @@ class Form extends React.Component {
     }
     render(){
         return (
-            <div>
+            <div className= "App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Welcome to Transcages Ireland</h1>
@@ -50,11 +50,10 @@ class Form extends React.Component {
                 </table>
 
 
+                {/*Contact Form*/}
 
 
-
-
-                {/* Name fiedl*/}
+                {/* Name field*/}
                 <Field
                     label="Name"
                     onChange={(event) => this.updateField('name', event.target.value)}
