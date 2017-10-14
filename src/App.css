@@ -3,28 +3,37 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  #animation: App-logo-spin infinite 20s linear;
+  height: 170px;
 }
 
 .App-header {
   background-color: #0026ff;
-  height: 150px;
+  height: 270px;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3.00em;
 }
 
 .App-intro {
   font-size: large;
 }
 
+.SearchBox {
+    padding-top: 10px;
+    font-size:large;
+    height: 40px;
+    display: inline;
+    width: 100%;
+    float: right;
+}
 
 .Menu {
-    font-size: large;
+    padding-top: 5px;
+    font-size: x-large;
     height: 40px;
     display: inline;
     width: 100%;
@@ -34,7 +43,6 @@
 }
 
 
-/* app css stylesheet */
 
 body {
     padding-top: 20px;

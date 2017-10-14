@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import CageApp from './App';
+import ContactsApp from './contactUs';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-import Cages from './Data';
+//import Cages from './Data';
 
 ReactDOM.render(
-    <CageApp cages={Cages}/>,
+    <ContactsApp/>,
     document.getElementById('root')
 );
 
