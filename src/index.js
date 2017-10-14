@@ -9,6 +9,9 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import HomeApp from './home';
 
 ReactDOM.render(
+
+
+
     //<Form/>
     //<CageApp cages={Cages}/>,
     <HomeApp/>,
