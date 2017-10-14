@@ -3,6 +3,7 @@ import logo from './header.jpg';
 import './App.css';
 import _ from 'lodash';
 import api from './test/stub_API';
+import { SocialIcon } from 'react-social-icons';
 
 
 
@@ -205,6 +206,11 @@ class  HomeApp extends React.Component {
                                 upvoteHandler={this.incrementUpvote} downvoteHandler={this.decrementUpvote} />
 
                             <Form addHandler={this.add} />
+                            <SocialIcon url="http://twitter.com/transcages" />
+                            <SocialIcon url="https://www.facebook.com/transcagesireland/" />
+                            <SocialIcon url="https://za.pinterest.com/transcagesirela/"/>
+                            
+
                         </div>
                     </div>
                 </div>

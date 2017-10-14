@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
 //import Form from './contactUs';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -9,12 +10,10 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import HomeApp from './home';
 
 ReactDOM.render(
-
-
-
+   
     //<Form/>
     //<CageApp cages={Cages}/>,
-    <HomeApp/>,
+    <HomeApp />,
     document.getElementById('root')
 );
 
