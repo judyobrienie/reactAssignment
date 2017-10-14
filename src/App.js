@@ -5,38 +5,59 @@ import './App.css';
 
 class Menu extends React.Component {
 
-  render() {
+    render() {
+
+        handleChange = (e, type, value) => {
+            e.preventDefault();
+            this.props.onUserInput(type, value);
+        };
+
+        handleTextChange = (e) => {
+            this.handleChange(e, 'search', e.target.value);
+        };
+
+        handleSortChange = (e) => {
+            this.handleChange(e, 'sort', e.target.value);
+        };
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Transcages Ireland</h1>
         </header>
-        
+         <table>
+            <tbody>
                  <tr className="Menu">
                     <td>
                         <input type="text" className="Menu" value="Home" />
                     </td>
                     <td>
-                        <input type="text" className="Menu" value="Gallery" o />
+                        <input type="text" className="Menu" value="Gallery" />
                     </td>
                     <td>
                         <input type="text" className="Menu" value="Contact Us" />
                     </td>
                    
-                </tr>
+                 </tr>
+              </tbody>
+        
+       
                  <div className="SearchBox">
-                     <input type="text" placeholder="Search" />
-                     Sort by:
-                     <select>
+                    <input type="text" placeholder="Search"
+                        value={this.props.filterText}
+                        onChange={this.handleTextChange} />
+                    Sort by:
+                    <select id="sort" value={this.props.order}
+                        onChange={this.handleSortChange} >/>
                          <option value="Name">Alphabetical</option>
                          <option value="Price">Price</option>
                      </select>
                  </div>      
-           
+            </table>
     
-
-      </div>
+        </div> 
+     
     );
   }
 }
@@ -68,21 +89,35 @@ class FilteredCageList extends React.Component {
                     {displayedCages}
                 </ul>
             </div>
+          
         );
     }
 }
   
 
+    
 
 class CageApp extends React.Component {
+
+    state = { search: '', sort: 'name' };
+
+    handleChange = (type, value) => {
+        if (type === 'search') {
+            this.setState({ search: value });
+        } else {
+            this.setState({ sort: value });
+        }
+    };
     render() {
         return (
             <div className="view-container">
                 <div className="view-frame">
                     <div className="container-fluid">
                         <div className="row">
-                            <Menu />
-                                <FilteredCageList cages={this.props.cages} />
+                            <Menu onUserInput={this.handleChange}
+                                filterText={this.state.search}
+                                sort={this.state.sort}/>
+                            <FilteredCageList cages={this.props.cages} />
                         </div>
                     </div>
                 </div>

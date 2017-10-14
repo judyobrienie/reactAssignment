@@ -10,7 +10,7 @@ var AllCages = [
     {
         'price': 200, 
         'id': 'Two Door Crates', 
-        'imageUrl': 'images/cages/dogcratesjpg', 
+        'imageUrl': 'images/cages/dogcrates.jpg', 
         'name': 'Two Door Dog Crates', 
         'snippet': 'Stainless Steel Two Door Dog Crates.'
     }, 
@@ -38,7 +38,7 @@ var AllCages = [
     {
         'price': 600,
         'id': 'Puppies Cage',
-        'imageUrl': 'images/cages/puppiescage.jpg',
+        'imageUrl': 'images/cages/puppycages.jpg',
         'name': 'Puppies Cage',
         'snippet': 'Stainless Steel Six Puppies Cage.'
     }, 
@@ -52,7 +52,7 @@ var AllCages = [
     {
         'price': 100,
         'id': 'Standalone Cage',
-        'imageUrl': 'images/cages/standalonecage.jpg',
+        'imageUrl': 'images/cages/standalone.jpg',
         'name': 'Standalone Cage',
         'snippet': 'Stainless Steel Standalone Two Door Cage.'
     }, 

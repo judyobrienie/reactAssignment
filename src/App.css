@@ -27,8 +27,9 @@
     font-size: large;
     height: 40px;
     display: inline;
-    width: 50%;
+    width: 100%;
     float: left;
+    
     #background: #7da5d8;
 }
 
