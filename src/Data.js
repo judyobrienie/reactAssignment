@@ -15,7 +15,7 @@ var AllCages = [
         'snippet': 'Stainless Steel Two Door Dog Crates.'
     }, 
     {
-        'age': 300,  
+        'price': 300,  
         'id': 'Stainless Steel Van Floor', 
         'imageUrl': 'images/cages/dogvan.jpg', 
         'name': 'Stainless Steel Van Floor', 

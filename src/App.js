@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import logo from './header.jpg';
 import './App.css';
+import _ from 'lodash';
 
 
 class Menu extends React.Component {
-
-    render() {
 
         handleChange = (e, type, value) => {
             e.preventDefault();
@@ -20,6 +19,7 @@ class Menu extends React.Component {
             this.handleChange(e, 'sort', e.target.value);
         };
 
+   render() {
     return (
       <div className="App">
         <header className="App-header">
@@ -41,7 +41,7 @@ class Menu extends React.Component {
                    
                  </tr>
               </tbody>
-        
+        </table>
        
                  <div className="SearchBox">
                     <input type="text" placeholder="Search"
@@ -54,7 +54,7 @@ class Menu extends React.Component {
                          <option value="Price">Price</option>
                      </select>
                  </div>      
-            </table>
+            
     
         </div> 
      
@@ -73,6 +73,7 @@ class CageItem extends React.Component {
                 </a>
                 <a href={'/cages/' + this.props.cage.id}> {this.props.cage.name}</a>
                 <p>{this.props.cage.snippet}</p>
+                <p>Euro {this.props.cage.price}</p>
             </li>
         );
     }
@@ -109,6 +110,12 @@ class CageApp extends React.Component {
         }
     };
     render() {
+        let list = this.props.cages.filter((p) => {
+                return p.name.toLowerCase().search(
+                    this.state.search.toLowerCase()) !== -1;
+        });
+       
+        let filteredList = _.sortBy(list, this.state.sort);
         return (
             <div className="view-container">
                 <div className="view-frame">
@@ -117,7 +124,7 @@ class CageApp extends React.Component {
                             <Menu onUserInput={this.handleChange}
                                 filterText={this.state.search}
                                 sort={this.state.sort}/>
-                            <FilteredCageList cages={this.props.cages} />
+                            <FilteredCageList cages={filteredList} />
                         </div>
                     </div>
                 </div>
