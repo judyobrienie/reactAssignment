@@ -3,9 +3,10 @@
     "",
     "\\public",
     "\\public\\cageSpecs",
-    "\\public\\cageSpecs\\images\\cages",
-    "\\src"
+    "\\src",
+    "\\src\\config",
+    "\\src\\test"
   ],
-  "SelectedNode": "\\src\\logo.png",
+  "SelectedNode": "\\public\\index.html",
   "PreviewInSolutionExplorer": false
 }
