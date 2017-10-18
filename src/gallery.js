@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from './header.jpg';
 import './App.css';
 import _ from 'lodash';
+import Cages from './Data';
+import { Link } from 'react-router'; 
+
 
 
 
@@ -22,28 +25,7 @@ class Menu extends React.Component {
 
    render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Transcages Ireland</h1>
-        </header>
-         <table>
-            <tbody>
-                 <tr className="Menu">
-                    <td>
-                        <input type="text" className="Menu" value="Home" />
-                    </td>
-                    <td>
-                        <input type="text" className="Menu" value="Gallery" />
-                    </td>
-                    <td>
-                        <input type="text" className="Menu" value="Contact Us" />
-                    </td>
-                   
-                 </tr>
-              </tbody>
-        </table>
-       
+     
                  <div className="SearchBox">
                     <input type="text" placeholder="Search"
                         value={this.props.filterText}
@@ -57,7 +39,7 @@ class Menu extends React.Component {
                  </div>      
             
     
-        </div> 
+      
      
     );
   }
@@ -68,11 +50,10 @@ class CageItem extends React.Component {
         let url = process.env.PUBLIC_URL + '/cageSpecs/' + this.props.cage.imageUrl;
         return (
             <li className="thumbnail cage-listing">
-                <a href={'/cages/' + this.props.cage.id} className="thumb">
-                    <img src={url}
-                        alt={this.props.cage.name} />
-                </a>
-                <a href={'/cages/' + this.props.cage.id}> {this.props.cage.name}</a>
+                <Link to={'/cages/' + this.props.cage.id} className="thumb">
+                    <img src={"/cageSpecs/" + this.props.cage.imageUrl}
+                        alt={this.props.cage.name} /> </Link>
+                <Link to={'/cage/' + this.props.cage.id}> {this.props.cage.name}</Link>
                 <p>{this.props.cage.snippet}</p>
                 <p>Euro {this.props.cage.price}</p>
             </li>
@@ -111,7 +92,7 @@ class CageApp extends React.Component {
         }
     };
     render() {
-        let list = this.props.cages.filter((p) => {
+        let list = Cages.filter((p) => {
                 return p.name.toLowerCase().search(
                     this.state.search.toLowerCase()) !== -1;
         });

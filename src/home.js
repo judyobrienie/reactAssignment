@@ -1,43 +1,16 @@
-import React, { Component } from 'react';
-import logo from './header.jpg';
+
+
+import React from 'react';
+
 import './App.css';
 import _ from 'lodash';
 import api from './test/stub_API';
 import { SocialIcon } from 'react-social-icons';
+import { Link } from 'react-router';
 
 
 
-class Menu extends React.Component {
 
-
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to Transcages Ireland</h1>
-                </header>
-                <table>
-                    <tbody>
-                        <tr className="Menu">
-                            <td>
-                                <input type="text" className="Menu" value="Home" />
-                            </td>
-                            <td>
-                                <input type="text" className="Menu" value="Gallery" />
-                            </td>
-                            <td>
-                                <input type="text" className="Menu" value="Contact Us" />
-                            </td>
-
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        );
-    }
-}
 
 
 
@@ -45,52 +18,52 @@ class Menu extends React.Component {
 
 
 class Form extends React.Component {
-state = { title: '', link: '' };
+    state = { title: '', link: '' };
 
-handleAdd = (e) => {
-    e.preventDefault();
-    let title = document.getElementById("title").value.trim();
-    let link = document.getElementById("link").value.trim();
-    if (!title || !link) {
-        return;
+    handleAdd = (e) => {
+        e.preventDefault();
+        let title = document.getElementById("title").value.trim();
+        let link = document.getElementById("link").value.trim();
+        if (!title || !link) {
+            return;
+        }
+
+        this.props.addHandler(title, link);
+        document.getElementById("title").value = "";
+        document.getElementById("link").value = "";
+        this.setState({ status: '' })
+
     }
 
-    this.props.addHandler(title, link);
-    document.getElementById("title").value = "";
-    document.getElementById("link").value = "";
-    this.setState({ status: '' })
-
-}
 
 
+    render() {
+        return (
+            <form style={{ marginTop: '30px' }}>
+                <h3>Add a new post</h3>
+                <div className="form-group">
+                    <input type="text"
+                        className="form-control" placeholder="Title"
+                        id="title"
+                        onChange={this.handleTitleChange}
+                    ></input>
 
-render() {
-    return (
-        <form style={{ marginTop: '30px' }}>
-            <h3>Add a new post</h3>
-            <div className="form-group">
-                <input type="text"
-                    className="form-control" placeholder="Title"
-                    id="title"
-                    onChange={this.handleTitleChange}
-                ></input>
+                </div>
+                <div className="form-group">
+                    <input type="text"
+                        className="form-control" placeholder="Link"
+                        id="link"
+                        onChange={this.handleLinkChange}
+                    ></input>
 
-            </div>
-            <div className="form-group">
-                <input type="text"
-                    className="form-control" placeholder="Link"
-                    id="link"
-                    onChange={this.handleLinkChange}
-                ></input>
+                </div>
+                <button type="submit" className="btn btn-primary" onClick={this.handleAdd}>Post </button>
 
-            </div>
-            <button type="submit" className="btn btn-primary" onClick={this.handleAdd}>Post </button>
-
-        </form>
-    );
+            </form>
+        );
 
 
-}
+    }
 };
 
 class NewsItem extends React.Component {
@@ -138,16 +111,16 @@ class NewsItem extends React.Component {
                 {this.props.post.downvotes}
 
                 <span style={lineStyle} >{line}<span>
-                    <a href={'#/posts/' + this.props.post.id}>Comments</a>
+                    <Link to={'/posts/' + this.props.post.id}>Comments</Link>
                     <span className="glyphicon glyphicon-thumbs-down"
                         style={cursor}
                         onClick={this.handleDownVote} ></span>
-                      {this.props.post.downvotes}
-                   
+                  {this.props.post.downvotes}
+
                 </span>
                 </span>
 
-        
+
 
             </div>
 
@@ -173,7 +146,7 @@ class NewsList extends React.Component {
     }
 }
 
-class  HomeApp extends React.Component {
+class HomeApp extends React.Component {
     incrementUpvote = (id) => {
         api.upvote(id);
         this.setState({});
@@ -195,12 +168,8 @@ class  HomeApp extends React.Component {
         }
         );
         return (
-            <div className="view-container">
-                <Menu />
-                <div className="row">
-                    <div className="col-md-6 col-md-offset-3">
-                        <div className="page-header">
-                           
+            <div >
+                
                             <h1>Greyhound Racing Blog</h1>
                             <NewsList posts={posts}
                                 upvoteHandler={this.incrementUpvote} downvoteHandler={this.decrementUpvote} />
@@ -210,12 +179,10 @@ class  HomeApp extends React.Component {
 
                             <SocialIcon url="http://twitter.com/transcages" />
                             <SocialIcon url="https://www.facebook.com/transcagesireland/" />
-                            <SocialIcon url="https://za.pinterest.com/transcagesirela/"/>
-                            
+                            <SocialIcon url="https://za.pinterest.com/transcagesirela/" />
 
-                        </div>
-                    </div>
-                </div>
+
+                      
             </div>
         );
     }
