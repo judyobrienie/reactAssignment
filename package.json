@@ -10,6 +10,7 @@
     "react-router": "^3.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
+    "simple-react-forms": "^1.5.0",
     "superagent": "^1.6.1"
   },
   "scripts": {
@@ -19,7 +20,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    
     "react-social-icons": "^2.7.0"
   }
 }

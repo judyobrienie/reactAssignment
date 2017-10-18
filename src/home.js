@@ -5,13 +5,8 @@ import React from 'react';
 import './App.css';
 import _ from 'lodash';
 import api from './test/stub_API';
-import { SocialIcon } from 'react-social-icons';
+
 import { Link } from 'react-router';
-
-
-
-
-
 
 
 
@@ -105,10 +100,7 @@ class NewsItem extends React.Component {
                     onClick={this.handleVote} ></span>
                 {this.props.post.upvotes}
 
-                <span className="glyphicon glyphicon-thumbs-down"
-                    style={cursor}
-                    onClick={this.handleDownVote} ></span>
-                {this.props.post.downvotes}
+               
 
                 <span style={lineStyle} >{line}<span>
                     <Link to={'/posts/' + this.props.post.id}>Comments</Link>
@@ -176,13 +168,6 @@ class HomeApp extends React.Component {
 
                             <Form addHandler={this.add} />
 
-
-                            <SocialIcon url="http://twitter.com/transcages" />
-                            <SocialIcon url="https://www.facebook.com/transcagesireland/" />
-                            <SocialIcon url="https://za.pinterest.com/transcagesirela/" />
-
-
-                      
             </div>
         );
     }

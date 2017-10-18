@@ -30,6 +30,10 @@
     width: 100%;
     float: right;
 }
+.form-group{
+
+    display:inline-block;
+}
 
 .Menu {
     padding-top: 5px;
@@ -64,7 +68,8 @@ body {
 .cages li {
     clear: both;
     height: 115px;
-    padding-top: 15px;
+    padding-top: 30px;
+  
 }
 
 /** Detail View **/

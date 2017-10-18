@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import logo from './header.jpg';
+import React from 'react';
 import './App.css';
 import _ from 'lodash';
 import Cages from './Data';
 import { Link } from 'react-router'; 
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 
 
@@ -47,13 +47,13 @@ class Menu extends React.Component {
 
 class CageItem extends React.Component {
     render() {
-        let url = process.env.PUBLIC_URL + '/cageSpecs/' + this.props.cage.imageUrl;
+
         return (
             <li className="thumbnail cage-listing">
                 <Link to={'/cages/' + this.props.cage.id} className="thumb">
                     <img src={"/cageSpecs/" + this.props.cage.imageUrl}
                         alt={this.props.cage.name} /> </Link>
-                <Link to={'/cage/' + this.props.cage.id}> {this.props.cage.name}</Link>
+                <Link to={'/cages/' + this.props.cage.id}> {this.props.cage.name}</Link>
                 <p>{this.props.cage.snippet}</p>
                 <p>Euro {this.props.cage.price}</p>
             </li>
@@ -67,12 +67,18 @@ class FilteredCageList extends React.Component {
             return <CageItem key={cage.id} cage={cage} />;
         });
         return (
-            <div className="col-md-10">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-md-10"> </div>
+                    <div className="col-md-10">
                 <ul className="cages">
                     {displayedCages}
                 </ul>
-            </div>
-          
+
+                       
+                     </div>
+                </div>
+           </div>
         );
     }
 }

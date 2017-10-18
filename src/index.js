@@ -5,12 +5,13 @@ import './index.css';
 import Form from './contactUs';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import CageApp from './gallery';
-//import Cages from './Data';
+import CageDetail from './cageDetail';
 import logo from './header.jpg';
 import { Link } from 'react-router';
 import HomeApp from './home';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import CommentView from './commentPage';
+import { SocialIcon } from 'react-social-icons';
 
 class App extends React.Component {
 
@@ -38,6 +39,12 @@ class App extends React.Component {
                     </tbody>
                 </table>
                 {this.props.children}
+
+                <footer>
+                    <SocialIcon url="http://twitter.com/transcages" />
+                    <SocialIcon url="https://www.facebook.com/transcagesireland/" />
+                    <SocialIcon url="https://za.pinterest.com/transcagesirela/" />
+                </footer>
             </div>
 
         );
@@ -54,8 +61,10 @@ ReactDOM.render(
                 <IndexRoute component={HomeApp} />
                      <Route path="posts/:postId" component={CommentView} />
             </Route>
-            <Route path="/gallery" component={App} >
+            <Route path="/gallery/" component={App} >
                 <IndexRoute component={CageApp} />
+                    <Route path="/cages/" component={CageApp} />      
+                    <Route path="/cages/:id" component={CageDetail} />
             </Route>
             <Route path="/contact" component={App} >
                 <IndexRoute component={Form} />
@@ -64,3 +73,4 @@ ReactDOM.render(
     ),
     document.getElementById('root')
 );
+
