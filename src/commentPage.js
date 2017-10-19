@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import api from './test/stubAPI';
+import api from './test/stub_API';
 
 class Form extends React.Component {
     state = { comment: '', name: '' };

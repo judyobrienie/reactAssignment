@@ -3,10 +3,13 @@
     "",
     "\\public",
     "\\public\\cageSpecs",
+    "\\public\\cageSpecs\\cages",
+    "\\public\\cageSpecs\\images",
+    "\\public\\cageSpecs\\images\\cages",
     "\\src",
     "\\src\\config",
     "\\src\\test"
   ],
-  "SelectedNode": "\\src\\index.css",
+  "SelectedNode": "\\public\\cageSpecs\\cages\\two-door-cage.json",
   "PreviewInSolutionExplorer": false
 }
