@@ -2,14 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\cageSpecs",
-    "\\public\\cageSpecs\\cages",
-    "\\public\\cageSpecs\\images",
-    "\\public\\cageSpecs\\images\\cages",
     "\\src",
     "\\src\\config",
     "\\src\\test"
   ],
-  "SelectedNode": "\\public\\cageSpecs\\cages\\two-door-cage.json",
+  "SelectedNode": "\\src\\test\\stub_API.js",
   "PreviewInSolutionExplorer": false
 }

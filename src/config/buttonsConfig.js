@@ -31,9 +31,9 @@ logFormDataToConsole(event){
 }
 
 render() {
-        const recipient = 'mailto:${this.props.email}';
-        const subject= '?subject=Interested%20Client';
-        const body = '&body=${this.props.formValues.message }';
+       // const recipient = 'mailto:${this.props.email}';
+       // const subject= '?subject=Interested%20Client';
+       // const body = '&body=${this.props.formValues.message }';
         return (
             <button
                 href={'${recipient}${subject}&{body}'}
@@ -42,7 +42,7 @@ render() {
                     >
 
                     Contact US
-        </button >
+            </button >
         
         );
     }
