@@ -1,5 +1,7 @@
 // JavaScript source code
 import _ from 'lodash';
+import Cages from '../Data';
+this.cages = Cages
 
 
 class StubAPI {

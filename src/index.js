@@ -22,7 +22,7 @@ class App extends React.Component {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Welcome to Transcages Ireland</h1>
                 </header>
-                <table>
+               <table>
                     <tbody>
                         <tr className="Menu">
                             <td>
@@ -37,7 +37,7 @@ class App extends React.Component {
                            
                         </tr>
                     </tbody>
-                </table>
+               </table>
                 {this.props.children}
 
                 <footer>

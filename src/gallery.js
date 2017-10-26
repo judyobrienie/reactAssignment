@@ -81,7 +81,7 @@ class CageItem extends React.Component {
         e.preventDefault();
         let id = this.state.id.trim();
         let name = this.state.name.trim();
-        let imageUrl = this.state.image.trim();
+        let imageUrl = this.state.imageUrl.trim();
         let snippet = this.state.snippet.trim();
         if (!id || !name || !imageUrl || !snippet) {
             return;
@@ -145,10 +145,10 @@ class CageItem extends React.Component {
                     value={this.state.id}
                     onChange={this.handleIdChange} /> </td>,
                 <td key={'name'}><input type="text" className="form-control"
-                    value={this.state.address}
+                    value={this.state.name}
                     onChange={this.handleNameChange} /> </td>,
                  <td key={'imageUrl'}><input type="text" className="form-control"
-                    value={this.state.address}
+                    value={this.state.imageUrl}
                     onChange={this.handleImageUrlChange} /> </td>,
                  <td key={'snippet'}><input type="text" className="form-control"
                     value={this.state.snippet}
@@ -164,30 +164,31 @@ class CageItem extends React.Component {
 
         return (
             <div>
-            <li className="thumbnail cage-listing">
-            <Link to={'/cages/' + this.props.cage.id} className="thumb">
-                <img src={"/cageSpecs/" + this.props.cage.imageUrl}
-                    alt={this.props.cage.name} /> </Link>
-            <Link to={'/cages/' + this.props.cage.id}> {this.props.cage.name}</Link>
-            <p>{this.props.cage.snippet}</p>
-            <p>Euro {this.props.cage.price}</p>
-
-            </li>
-         
-            <tr>
-                {fields}
-                <td>
-                    <input type="button" className={'btn ' + activeButtons.leftButtonColor}
-                        value={activeButtons.leftButtonVal}
-                        onClick={leftButtonHandler} />
-                </td>
-                <td>
-                    <input type="button" className={'btn ' + activeButtons.rightButtonColor}
-                        value={activeButtons.rightButtonVal}
-                        onClick={rightButtonHandler} />
-                </td>
-            </tr>
-         </div>
+                <div>
+                <li className="thumbnail cage-listing">
+                <Link to={'/cages/' + this.props.cage.id} className="thumb">
+                    <img src={"/cageSpecs/" + this.props.cage.imageUrl}
+                        alt={this.props.cage.name} /> </Link>
+                <Link to={'/cages/' + this.props.cage.id}> {this.props.cage.name}</Link>
+                <p>{this.props.cage.snippet}</p>
+                <p>Euro {this.props.cage.price}</p>
+                </li>
+                </div>
+           
+                 <tr>
+                    {fields}
+                        <td>
+                            <input type="button" className={'btn ' + activeButtons.leftButtonColor}
+                                value={activeButtons.leftButtonVal}
+                                onClick={leftButtonHandler} />
+                        </td>
+                        <td>
+                            <input type="button" className={'btn ' + activeButtons.rightButtonColor}
+                                value={activeButtons.rightButtonVal}
+                                onClick={rightButtonHandler} />
+                        </td>
+                    </tr>
+             </div>
         );
     }
 }
@@ -195,17 +196,20 @@ class CageItem extends React.Component {
 
 class FilteredCageList extends React.Component {
     render() {
-        var displayedCages = this.props.cages.map(function (cage) {
-            return <CageItem key={cage.id} cage={cage} />;
+        var displayedCages = this.props.cages.map((cage) =>{
+            return <CageItem key={cage.id} cage={cage}
+                updateHandler={this.props.updateHandler} addHandler={this.props.addHandler} deleteHandler={this.props.deleteHandler}/>;
+              
         });
         return (
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-10"> </div>
                     <div className="col-md-10">
-                <ul className="cages">
-                    {displayedCages}
-                </ul>
+                        <ul className="cages">
+                                    {displayedCages}
+                          
+                        </ul>
                        
                      </div>
                 </div>
@@ -213,19 +217,20 @@ class FilteredCageList extends React.Component {
         );
     }
 }
-  
+ 
 
-    
+
+
 
 class CageApp extends React.Component {
 
-    updateCage = (key, n, a, p) => {
-        api.update(key, n, a, p);
+    updateCage = (key, n, i, s) => {
+        api.update(key, n, i, s);
         this.setState({});
     };
 
-    addCage = (n, a, p) => {
-        api.add(n, a, p);
+    addCage = (n, i,s) => {
+        api.add(n, i, s);
         this.setState({});
 
     }
@@ -261,11 +266,10 @@ class CageApp extends React.Component {
                             <Menu onUserInput={this.handleChange}
                                 filterText={this.state.search}
                                 sort={this.state.sort}/>
-                            <FilteredCageList cages={filteredList} />
-                            <td>
-                                <input type="button" className="btn btn-primary" value="Add New Cage" onClick={this.handleAdd} />
-                               
-                            </td>
+                            <FilteredCageList cages={filteredList} 
+                              updateHandler={this.updateCage} addHandler={this.addCage} deleteHandler={this.deleteCage}/>
+                                   <input type="button" className="btn btn-primary" value="Add New Cage" onClick={this.handleAdd} />
+                                    
                         </div>
                     </div>
                 </div>
