@@ -47,8 +47,8 @@ class Menu extends React.Component {
 
    render() {
     return (
-
-                 <div className="SearchBox">
+        
+         <div className="SearchBox">
                     <input type="text" placeholder="Search"
                         value={this.props.filterText}
                         onChange={this.handleTextChange} />
@@ -58,8 +58,7 @@ class Menu extends React.Component {
                          <option value="Name">Alphabetical</option>
                          <option value="Price">Price</option>
                      </select>
-                 </div>      
-           
+        </div>      
      
     );
   }
@@ -207,8 +206,9 @@ class FilteredCageList extends React.Component {
                     <div className="col-md-10"> </div>
                     <div className="col-md-10">
                         <ul className="cages">
-                                    {displayedCages}
-                          
+                            {displayedCages}
+                           
+
                         </ul>
                        
                      </div>
@@ -218,6 +218,29 @@ class FilteredCageList extends React.Component {
     }
 }
  
+
+
+
+
+class CagesTable extends React.Component {
+    render() {
+        return (
+            <table className="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Snippet</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <FilteredCageList cages={this.props.cages}
+                    updateHandler={this.props.updateHandler} addHandler={this.props.addHandler} deleteHandler={this.props.deleteHandler} />
+            </table>
+        );
+    }
+}
 
 
 
@@ -250,14 +273,15 @@ class CageApp extends React.Component {
         }
     };
     render() {
+        
         let list = Cages.filter((p) => {
                 return p.name.toLowerCase().search(
                     this.state.search.toLowerCase()) !== -1;
         });
        
         let filteredList = _.sortBy(list, this.state.sort);
-
-
+        
+         
         return (
             <div className="view-container">
                 <div className="view-frame">
@@ -265,11 +289,8 @@ class CageApp extends React.Component {
                         <div className="row">
                             <Menu onUserInput={this.handleChange}
                                 filterText={this.state.search}
-                                sort={this.state.sort}/>
-                            <FilteredCageList cages={filteredList} 
-                              updateHandler={this.updateCage} addHandler={this.addCage} deleteHandler={this.deleteCage}/>
-                                   <input type="button" className="btn btn-primary" value="Add New Cage" onClick={this.handleAdd} />
-                                    
+                                sort={this.state.sort} />
+                            <FilteredCageList cages={filteredList} />
                         </div>
                     </div>
                 </div>
@@ -277,5 +298,4 @@ class CageApp extends React.Component {
         );
     }
 }
-
 export default CageApp;

@@ -6,7 +6,9 @@ this.cages = Cages
 
 class StubAPI {
 
-    
+    getAll() {
+        return this.cages;
+    }
 
     delete(k) {
         let elements = _.remove(this.cages,
@@ -16,8 +18,8 @@ class StubAPI {
     }
    
     add(n, i, s) {
-        let len = this.contacts.length;
-        let newLen = this.contacts.push({
+        let len = this.cages.length;
+        let newLen = this.cages.push({
             name: n, imageUrl: i, snippet: s
         });
         return newLen > len;
