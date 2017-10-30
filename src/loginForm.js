@@ -14,9 +14,7 @@ class LoginForm extends React.Component {
 
     };
 
-    onChange = e => this.setState({
-        data: {
-            ...this.state.data, [e.target.name]: e.target.value
+    onChange = e => this.setState({ data: {...this.state.data, [e.target.name]: e.target.value
         }
     });
 

@@ -14,7 +14,7 @@ class Login extends React.Component {
         <div>
             <h1>Login</h1>
 
-            <LoginForm submit={this.subit}/>
+            <LoginForm submit={this.submit}/>
         </div> 
         );
     }
