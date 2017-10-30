@@ -222,29 +222,6 @@ class FilteredCageList extends React.Component {
 
 
 
-class CagesTable extends React.Component {
-    render() {
-        return (
-            <table className="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Snippet</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <FilteredCageList cages={this.props.cages}
-                    updateHandler={this.props.updateHandler} addHandler={this.props.addHandler} deleteHandler={this.props.deleteHandler} />
-            </table>
-        );
-    }
-}
-
-
-
-
 class CageApp extends React.Component {
 
     updateCage = (key, n, i, s) => {
@@ -283,6 +260,7 @@ class CageApp extends React.Component {
         
          
         return (
+          
             <div className="view-container">
                 <div className="view-frame">
                     <div className="container-fluid">
@@ -290,11 +268,14 @@ class CageApp extends React.Component {
                             <Menu onUserInput={this.handleChange}
                                 filterText={this.state.search}
                                 sort={this.state.sort} />
-                            <FilteredCageList cages={filteredList} />
+                            <FilteredCageList cages={filteredList}
+                                updateHandler={this.updateCage} addHandler={this.addCage} deleteHandler={this.deleteCage} />
+                    
                         </div>
                     </div>
                 </div>
             </div>
+          
         );
     }
 }
