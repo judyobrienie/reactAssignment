@@ -8,6 +8,9 @@ import { Link } from 'react-router';
 
 
 
+
+
+
 class Menu extends React.Component {
 
     handleChange = (e, type, value) => {
