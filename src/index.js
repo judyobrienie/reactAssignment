@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 import Form from './contactUs';
+import Cages from './cages';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import CageApp from './gallery';
 import CageDetail from './cageDetail';
@@ -27,6 +28,9 @@ class App extends React.Component {
                         <tr className="Menu">
                             <td>
                                 <Link className="Menu"to={'/'}>Home</Link> 
+                            </td>
+                            <td>
+                                <Link className="Menu" to={'/cages/'}>Cages Listing</Link>
                             </td>
                             <td>
                                 <Link className="Menu" to={'/gallery/'}>Gallery</Link> 
@@ -60,6 +64,9 @@ ReactDOM.render(
             <Route path="/" component={App}>
                 <IndexRoute component={HomeApp} />
                      <Route path="posts/:postId" component={CommentView} />
+            </Route>
+            <Route path="/cages" component={App} >
+                <IndexRoute component={Cages} />
             </Route>
             <Route path="/gallery/" component={App} >
                 <IndexRoute component={CageApp} />
