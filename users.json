@@ -1,0 +1,41 @@
+
+{
+   
+"users":[
+            {
+         
+                "id": "1", 
+                "firstName": "Judy",
+                "lastName": "OBrien", 
+                "email": "judyobrienie@gmail.com", 
+                "password": "password"
+            }, 
+            {
+         
+                "id": "2", 
+                "firstName": "Emma",
+                "lastName": "Kelly", 
+                "email": "emmakelly@gmail.com", 
+                "password": "password"
+            }, 
+            {
+         
+                "id": "3", 
+                "firstName": "Jack",
+                "lastName": "Kelly", 
+                "email": "jackkelly@gmail.com", 
+                "password": "password"
+            }, 
+            {
+         
+                "id": "4", 
+                "firstName": "Mick",
+                "lastName": "Kelly", 
+                "email": "mickkelly@gmail.com", 
+                "password": "password"
+            }
+   
+  
+     ] 
+
+}
