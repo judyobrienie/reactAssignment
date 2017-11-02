@@ -74,7 +74,7 @@ I added a dislike button and linked it to the counter to decrement when clicked
 [image3]: ./gallery.PNG
 [image4]: ./contactUs.PNG
 [image5]: ./login.PNG
-[image6]: ./add Comment.PNG
+[image6]: ./addComment.PNG
 [image7]: ./individualCage.PNG
 [image8]: ./cage_list.PNG
 [image9]: ./json-server.PNG
