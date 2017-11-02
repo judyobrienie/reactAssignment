@@ -1,18 +1,19 @@
 # Assignment 1 - ReactJS app.
 
-Name: ... your name ...
+Name: Judy OBrien
 
 ## Overview.
-...... A statement of the app concept and objectives (about a half-page) ........
+.I tried to build a website for a business Transcages Ireland.  In this website I wanted to show products(cages) and have a 'Contact Us' form so that customers
+can contact owner.  I further tried to add in a login page so that the admin could log in and change the the list of cages or delete cages.
 
 
  . . . . . List of user features . . . . 
  
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + List of Searchable Cages (Alphabeth or Price)
+ + Login Page
+ + Contact Us Page
+ + Leave a commont on a Post
+ + Add a Post
 
 ## Installation requirements.
 . . . .  List of software used to develop the app . . . . . . . 
@@ -20,14 +21,14 @@ Name: ... your name ...
 + ReactJS v15.3.0
 + Bootstrap 3
 + create-react-app tool
-+ etc
-+ etc 
++ lodash
++ react-router
++ social icons
++ json-server 
 
-. . . . . . Also, explain (to a third party) what steps one must take to run your app after cloning it from the repository, e.g. any non-standard software installation; any environment setup; how to start the app; where to view app in browser . . . . . . . At its simplest this may just be: npm install + npm start
+Instructions: : npm install + npm start
 
 ## Data Model Design.
-
-. . . . . Diagram of app's data model (see example below) AND/OR a sample of the test data used (JSON or equivalent). Always use meaningful sample data . . . . 
 
 ![][image1]
 
@@ -51,12 +52,9 @@ Name: ... your name ...
 + etc
 
 ## Extra features
-. . . . . Briefly explain any non-standard features, functional or non-functional, developed for the app . . . . . .  
-
+I added Social Icons
 ## Independent learning.
 . . . . . State the non-standard aspects of React (or other related technologies) that you researched and applied in this assignment . . . . .  
 
 
-[image1]: ./model.png
-[image2]: ./design.jpg
-[image3]: ./screen.png
+[image1]: ./design.jpg
