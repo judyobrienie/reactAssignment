@@ -42,7 +42,12 @@ Instructions: : npm install + npm start
 . . . . . Screenshots of app's views (see example below) with appropriate captions . . . . . . . 
 
 ![][image2]
-![][image3]![][image4]![][image5]![][image6]![][image7]![][image8]
+![][image3]
+![][image4]
+![][image5]
+![][image6]
+![][image7]
+![][image8]
 ![][image9]
 
 
@@ -55,7 +60,7 @@ Instructions: : npm install + npm start
 + /gallery - photos of cages
 + /gallery/cages/:id - individual cage by id
 + /contact - contact us form
-+ etc
+
 
 ## Extra features
 I added Social Icons
@@ -65,12 +70,11 @@ I added a dislike button and linked it to the counter to decrement when clicked
 
 
 [image1]: ./design.jpg
-[image2]: ./home.png
-[image3]: ./gallery.png
-[image4]: ./contactUs.png
-[image5]: ./login.png
-[image6]: ./add Comment.png
-[image7]: ./individualCage.png
-[image8]: ./cage_list.png
-
-[image9]: ./json-server.png
+[image2]: ./home.PNG
+[image3]: ./gallery.PNG
+[image4]: ./contactUs.PNG
+[image5]: ./login.PNG
+[image6]: ./add Comment.PNG
+[image7]: ./individualCage.PNG
+[image8]: ./cage_list.PNG
+[image9]: ./json-server.PNG
