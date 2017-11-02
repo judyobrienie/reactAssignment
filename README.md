@@ -36,25 +36,41 @@ Instructions: : npm install + npm start
 
  . . . A diagram showing the app's hierarchical component design (see example below) . . . .  
 
-![][image2]
+
 
 ## UI Design.
 . . . . . Screenshots of app's views (see example below) with appropriate captions . . . . . . . 
 
-![][image3]
+![][image2]
+![][image3]![][image4]![][image5]![][image6]![][image7]![][image8]
+![][image9]
+
 
 ## Routing.
-. . . . List each route supported by the app and state the associated view . . . . . (see examples below)
-
-+ /foos - displays all published foos
-+ /foos/:id - detail view of a particular foo (:id)
-+ etc
+.
++ / - home page
++ /post/:postId - displays all posts by id
++ /login - login page
++ /cages/ - list of cages
++ /gallery - photos of cages
++ /gallery/cages/:id - individual cage by id
++ /contact - contact us form
 + etc
 
 ## Extra features
 I added Social Icons
+I added a dislike button and linked it to the counter to decrement when clicked
 ## Independent learning.
 . . . . . State the non-standard aspects of React (or other related technologies) that you researched and applied in this assignment . . . . .  
 
 
 [image1]: ./design.jpg
+[image2]: ./home.png
+[image3]: ./gallery.png
+[image4]: ./contactUs.png
+[image5]: ./login.png
+[image6]: ./add Comment.png
+[image7]: ./individualCage.png
+[image8]: ./cage_list.png
+
+[image9]: ./json-server.png
