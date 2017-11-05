@@ -163,6 +163,7 @@ class HomeApp extends React.Component {
                 
                             <h1>Greyhound Racing Blog</h1>
                             <h3> We Design Dog Cages for Vans/Cars. We Manufacture Dog Crates for Vans/Cars. We Install Safe and Secure Greyhound Cages to suit You, your Dogs and your Vans.</h3>
+                             
                             
                             <NewsList posts={posts}
                                 upvoteHandler={this.incrementUpvote} downvoteHandler={this.decrementUpvote} />

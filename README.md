@@ -3,7 +3,7 @@
 Name: Judy OBrien
 
 ## Overview.
-.I tried to build a website for a business Transcages Ireland.  In this website I wanted to show products(cages) and have a 'Contact Us' form so that customers
+I tried to build a website for a business Transcages Ireland.  In this website I wanted to show products(cages) and have a 'Contact Us' form so that customers
 can contact owner.  I further tried to add in a login page so that the admin could log in and change the the list of cages or delete cages.
 
 
@@ -14,6 +14,7 @@ can contact owner.  I further tried to add in a login page so that the admin cou
  + Contact Us Page
  + Leave a commont on a Post
  + Add a Post
+ + Follow link to social media sites
 
 ## Installation requirements.
 . . . .  List of software used to develop the app . . . . . . . 
@@ -26,7 +27,9 @@ can contact owner.  I further tried to add in a login page so that the admin cou
 + social icons
 + json-server 
 
-Instructions: : npm install + npm start
+Instructions: : npm install + npm start 
+to start server : json-server --watch users.json --port 3004   to to localhost:3004/users
+				
 
 ## Data Model Design.
 
@@ -34,12 +37,9 @@ Instructions: : npm install + npm start
 
 ## App Component Design.
 
- . . . A diagram showing the app's hierarchical component design (see example below) . . . .  
-
-
+![][image10]
 
 ## UI Design.
-. . . . . Screenshots of app's views (see example below) with appropriate captions . . . . . . . 
 
 ![][image2]
 ![][image3]
@@ -63,10 +63,13 @@ Instructions: : npm install + npm start
 
 
 ## Extra features
-I added Social Icons
-I added a dislike button and linked it to the counter to decrement when clicked
+Social Icons
+Dislike button and linked it to the counter to decrement when clicked
+
 ## Independent learning.
-. . . . . State the non-standard aspects of React (or other related technologies) that you researched and applied in this assignment . . . . .  
+Contact us Form
+Login Page
+Social Icons
 
 
 [image1]: ./design.jpg
@@ -78,3 +81,4 @@ I added a dislike button and linked it to the counter to decrement when clicked
 [image7]: ./individualCage.PNG
 [image8]: ./cage_list.PNG
 [image9]: ./json-server.PNG
+[image10]: ./designing.jpg
