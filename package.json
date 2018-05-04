@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start": "node app.js",
+    "start": "node app.js",   ### i added this change 04/05/18
     "build": "react-scripts build",
     "json-server": "json-server --watch users.json --port 3004",
     "eject": "react-scripts eject"
