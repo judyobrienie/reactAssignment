@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^1.9.1",
     "json-server": "^0.12.0",
     "lodash": "^2.4.2",
+    "popper.js": "^1.14.3",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -13,7 +15,8 @@
     "react-scripts": "1.0.14",
     "semantic-ui-react": "^0.75.1",
     "simple-react-forms": "^1.5.0",
-    "superagent": "^1.6.1"
+    "superagent": "^1.6.1",
+    "validator": "^10.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
