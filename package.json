@@ -16,7 +16,7 @@
     "superagent": "^1.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && node ./src/index.js",
     "build": "react-scripts build",
     "json-server": "json-server --watch users.json --port 3004",
     "eject": "react-scripts eject"
