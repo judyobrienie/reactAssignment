@@ -16,7 +16,7 @@
     "superagent": "^1.6.1"
   },
   "scripts": {
-    "start": "react-scripts start && node ./src/index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "json-server": "json-server --watch users.json --port 3004",
     "eject": "react-scripts eject"
@@ -25,7 +25,7 @@
     "react-social-icons": "^2.7.0"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "./src/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/judyobrienie/reactAssignment.git"
