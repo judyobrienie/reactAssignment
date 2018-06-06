@@ -5,7 +5,7 @@ import './index.css';
 import Form from './contactUs';
 import Login from './login';
 import Cages from './cages';
-import './node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import CageApp from './gallery';
 import CageDetail from './cageDetail';
 import logo from './header.jpg';
